@@ -1,0 +1,28 @@
+Node* sortList(Node *head){
+    // Write your code here.
+    Node* oneHead=new Node(-1);
+    Node* zeroHead=new Node(-1);
+    Node* twoHead=new Node(-1);
+    Node*one=oneHead;
+    Node*two=twoHead;
+    Node*zero=zeroHead;
+    Node*temp=head;
+    while(temp){
+        if(temp->data==1){
+            one->next=temp;
+            one=one->next;
+        }else if(temp->data==0){
+            zero->next=temp;
+            zero=zero->next;
+        }else{
+            two->next=temp;
+            two=two->next;
+        }
+        temp=temp->next;
+    }
+    zero->next=oneHead->next;
+    one->next=twoHead->next;
+    two->next = nullptr;
+    return zeroHead->next;
+
+}
