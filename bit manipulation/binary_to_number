@@ -1,0 +1,19 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    long long ans=0,base=1;
+    for(int i=s.size()-1;i>=0;i--){
+        if(s[i]=='1'){
+            ans=ans+base;
+        }
+        
+        base=base*2;
+    }
+    cout<<ans<<endl;
+
+    return 0;
+}
